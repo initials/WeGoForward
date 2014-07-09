@@ -32,11 +32,11 @@ var frame_6_collide1;
 var spriteGround;
 var score;
 var tweet;
-var TWEET_PREAMBLE = 'We Go Forward ';
+var TWEET_PREAMBLE = 'https://twitter.com/intent/tweet?text=We Go Forward ';
 var TWEET_PROLOGUE = ' http://www.initialsgames.com/wegoforward/ &hashtags=wegoforward ';
 
 function create() {
-
+    score=0;
     tweet = document.getElementById('tweet');
     //alert(tweet.href);
     tweet.href = TWEET_PREAMBLE + score + TWEET_PROLOGUE;
