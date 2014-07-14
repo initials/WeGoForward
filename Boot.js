@@ -19,6 +19,10 @@ BasicGame.Boot.prototype = {
         //  Unless you specifically know your game needs to support multi-touch I would recommend setting this to 1
         this.input.maxPointers = 1;
         
+        Phaser.Canvas.setSmoothingEnabled(this.game.context, false);
+        Phaser.Canvas.setImageRenderingCrisp(this.game.canvas);
+        Phaser.Canvas.setImageRenderingBicubic(this.game.canvas);
+        
 
 
         //  Phaser will automatically pause if the browser tab the game is in loses focus. You can disable that here:
@@ -37,9 +41,7 @@ BasicGame.Boot.prototype = {
             this.scale.setScreenSize();
             this.game.stage.smoothed = false;
 
-            Phaser.Canvas.setSmoothingEnabled(this.game.context, false);
-            Phaser.Canvas.setImageRenderingCrisp(this.game.canvas);
-            Phaser.Canvas.setImageRenderingBicubic(this.game.canvas);
+
 
 
         }

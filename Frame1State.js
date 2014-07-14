@@ -39,9 +39,10 @@ BasicGame.Frame1State.prototype = {
 
         console.log(this.game.stage.smoothed);
         console.log(this.game.canvas);
+        console.log(this.game.context);
         console.log(f1.smoothed);
 
-
+        this.game.context.imageSmoothingEnabled=false;
 
 
     },
