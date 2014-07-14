@@ -39,3 +39,13 @@ a:active {color:#E56C60;}  /* selected link */
 
    padding:          25px 25px 25px 25px;
 }
+
+#gameContainer {
+    image-rendering: optimizeSpeed;             
+    image-rendering: -moz-crisp-edges;          
+    image-rendering: -webkit-optimize-contrast; 
+                                               
+    image-rendering: -o-crisp-edges;            // OS X & Windows Opera (12.02+)
+    image-rendering: optimize-contrast;         // Possible future browsers.
+    -ms-interpolation-mode: nearest-neighbor;   // IE
+}

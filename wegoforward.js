@@ -1,6 +1,9 @@
 
 var game = new Phaser.Game(585, 365, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update, render: render });
 
+var BootState = require('Boot');
+game.state.add('boot', BootState);
+
 function preload() {
 
     //game.load.spritesheet('wegoforward', 'art/spritesheet_x1.png', 500, 308);
@@ -111,6 +114,12 @@ function update() {
 
     });
 
+
+    if (game.input.mousePointer.isDown)
+    {
+        game.state.start('boot');
+
+    }
 }
 
 function render () {

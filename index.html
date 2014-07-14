@@ -1,51 +1,53 @@
-<!doctype html>
+<!DOCTYPE HTML>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>We Go Forward</title>
-        <script src="phaser.min.js"></script>
-		<script src="wegoforward.js"></script>
-		<link href="style.css" media="screen" rel="stylesheet" type="text/css">
-    </head>
-    <body>
+<head>
+	<meta charset="UTF-8" />
+	<title>Phaser Basic Project Template</title>
+	<script src="phaser.min.js"></script>
+	<script src="Boot.js"></script>
+	<script src="Preloader.js"></script>
+	<script src="MainMenu.js"></script>
+	<script src="Game.js"></script>
+
+	<script src="Frame1State.js"></script>
+	<script src="Frame2State.js"></script>
+	<link href="style.css" media="screen" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+
+<div id="gameContainer"></div>
+
+<script type="text/javascript">
+
+
+
+window.onload = function() {
+
+	//	Create your Phaser game and inject it into the gameContainer div.
+	//	We did it in a window.onload event, but you can do it anywhere (requireJS load, anonymous function, jQuery dom ready, - whatever floats your boat)
+	var game = new Phaser.Game(117, 73, Phaser.CANVAS, 'gameContainer', null, false, false);
+
+
+	//	Add the States your game has.
+	//	You don't have to do this in the html, it could be done in your Boot state too, but for simplicity I'll keep it here.
+	game.state.add('Boot', BasicGame.Boot);
+	game.state.add('Preloader', BasicGame.Preloader);
+	game.state.add('MainMenu', BasicGame.MainMenu);
+	game.state.add('Game', BasicGame.Game);
+	game.state.add('Frame1State', BasicGame.Frame1State);
+	game.state.add('Frame2State', BasicGame.Frame2State);
 	
-	<div id="phaser-example"></div>
-	<div id="text-place">
-
-	<br>
-	<a id='tweet' href="" data-count="none" 
-	          data-via="davidgeary"
-	          hashtags="#html5" target="_blank"
-	          class='tweet-link'>
-	          Tweet about We Go Forward</a>
-	<br>
-	<br>
-	<br>
-	Art by <a href="http://www.owlturd.com/">Owl Turd</a>
-	<br>
-	<br>
-	<a href="http://owlturd.com/post/91042216689/we-go-forward-image-twitter-facebook">Original post</a>
-	<br>
-	<br>
-	<!--
-	<a href="https://twitter.com/intent/tweet?button_hashtag=feedingtime&text=It's%20feeding%20time!" class="twitter-hashtag-button" data-url="http://www.initialsgames.com/feedingtime">Tweet #feedingtime</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	-->
+	//	Now start the Boot state.
+	game.state.start('Boot');
+    //  Or across the whole stage, like this:
+    
+    game.antialias = false;
 
 
-       
+};
 
-	<br>
-	<br>
-	<br>
+</script>
 
-
-	</div>
-		
-        <div class='tweet-place'>
-	       
-      </div>
- 
-
-    </body>
+</body>
 </html>
