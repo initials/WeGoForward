@@ -3,19 +3,13 @@ var game = new Phaser.Game(585, 365, Phaser.CANVAS, 'phaser-example', { preload:
 
 function preload() {
 
-    game.load.spritesheet('wegoforward', 'art/spritesheet_x1.png', 500, 308);
-    game.load.spritesheet('frame_6', 'art/frame_6.png', 117, 73);
-
+    //game.load.spritesheet('wegoforward', 'art/spritesheet_x1.png', 500, 308);
+    game.load.spritesheet('frame_6', 'art/frame_6_bg.png', 117, 73);
     game.load.spritesheet('raindrop_1', 'art/raindrop_1.png', 10, 10);
     game.load.spritesheet('raindrop_2', 'art/raindrop_2.png', 10, 10);
-
     game.load.spritesheet('frame_6_collide1', 'art/frame_6_collide1.png', 39, 17);
     game.load.spritesheet('frame_6_collide2', 'art/frame_6_collide2.png', 73, 15);
     game.load.spritesheet('frame_6_collide3', 'art/frame_6_collide3.png', 5, 17);
-
-
-    
-
     game.load.spritesheet('cloud', 'art/clouds.png', 30, 15);
 }
 
@@ -58,13 +52,6 @@ function create() {
     frame_6 = game.add.sprite(0,0, 'frame_6');
     frame_6.scrollfactor = 0;
     frame_6.scale.set(5) ;
-
-
-    // story = game.add.sprite(0,0, 'wegoforward');
-    // story.animations.add('left', [0, 1, 2, 3,4,5,6,7,8,9,10,11,12,13,14,15,16], 5, true);
-    // story.scrollfactor = 0;
-    // story.scale.set(4) ;
-    // story.play('left');
 
     rain = game.add.emitter(game.world.centerX, 0, 200);
     rain.width=game.world.width;
